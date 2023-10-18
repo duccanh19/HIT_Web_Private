@@ -46,7 +46,7 @@
 }
 
 .my-iamge p {
-    margin-top: 50px;
+    margin-top: 70px;
     margin-left: 10px;
 }
 
@@ -56,7 +56,7 @@
     width: 100%;
 }
 .info {
-    margin: 15px 0 15px 45px;
+    margin: -15px 0 15px 45px;
 }
 .info ul li {
     font-size: 1.4rem;
