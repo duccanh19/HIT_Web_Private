@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+    }
+}
+
+/* Small tablet */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    body {
+    }
+}
+
+/* Mobile  */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    body {
+    }
+}
+.body {
+    margin: 0 10px 0 10px;
+}
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title h1 {
+    color: #f63e96;
+}
+.my-iamge p {
+    font-size: 1.4rem;
+}
+.my-iamge {
+    display: flex;
+    align-items: center;
+}
+
+.my-iamge div img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
+.my-iamge p {
+    margin-top: 50px;
+    margin-left: 10px;
+}
+
+.my-hobby table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+.info {
+    margin: 15px 0 15px 45px;
+}
+.info ul li {
+    font-size: 1.4rem;
+}
+.info ul li a {
+    text-decoration: none;
+}
+.info ul li a i {
+    color: #ff7f8c;
+}
+.my-hobby td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    font-size: 1.4rem;
+}
+.my-hobby table tr:nth-child(2) td:nth-child(1) {
+    text-align: center;
+}
+.my-hobby table tr:nth-child(3) td:nth-child(1) {
+    text-align: center;
+}
+.my-hobby table tr:nth-child(4) td:nth-child(1) {
+    text-align: center;
+}
+.my-hobby table tr:nth-child(5) td:nth-child(1) {
+    text-align: center;
+}
+
+.my-hobby tr:nth-child(even) {
+    background-color: #ffffd3;
+}
+.my-hobby table tr th {
+    text-align: center;
+}
+.my-hobby table tr:nth-child(2) td:nth-child(2) {
+    color: #51927a;
+    font-size: 1.4rem;
+}
+.my-hobby table tr:nth-child(3) td:nth-child(2) {
+    color: #51927a;
+    font-size: 1.4rem;
+}
+.hobby {
+    background-color: #d1e9d3;
+}
+.hobby h2 {
+    color: #5a745b;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #f8eae9;
+    margin-top: 20px;
+}
+.contact {
+    display: flex;
+    color: #ffa5ba;
+}
+.contact a {
+    padding: 0 7px;
+    color: #d36485;
+}
