@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+    }
+}
+
+/* Small tablet */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    body {
+    }
+}
+
+/* Mobile  */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    body {
+    }
+}
+:root {
+    --primary-color: #624bff;
+    --background-color: #f1f5f9;
+    --text-color: #212b36;
+    --font-family: 'Roboto', sans-serif;
+}
+
+@font-face {
+    font-family: Inter-Regular;
+    src: url('../../HomeWork/Bai_2/Inter-Regular.ttf');
+    font-weight: 400;
+}
+@font-face {
+    font-family: Inter-Medium;
+    src: url('../../HomeWork/Bai_2/Inter-Medium.ttf');
+    font-weight: 500;
+}
+@font-face {
+    font-family: Inter-Light;
+    src: url('../../HomeWork/Bai_2/Inter-Light.ttf');
+    font-weight: 300;
+}
+@font-face {
+    font-family: Inter-ExtraLight;
+    src: url('../../HomeWork/Bai_2/Inter-ExtraLight.ttf');
+    font-weight: 200;
+}
+
+.body {
+    background-color: var(--background-color);
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+.content {
+    background-color: white;
+    width: 35vw;
+    height: 60vh;
+    margin: auto;
+    margin-top: 7%;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.form-login {
+    padding: 10px 20px;
+}
+.form-login h1 {
+    color: var(--primary-color);
+    font-family: Inter-Medium;
+    padding-top: 15px;
+}
+.form-login p {
+    padding: 25px 0;
+    font-family: Inter-Regular;
+    font-size: 1.4rem;
+}
+.form-label {
+    font-family: Inter-Regular;
+    font-size: 1.4rem;
+}
+.input-check {
+    height: 16px;
+    width: 20px;
+}
+.input-info {
+    padding: 5px 10px;
+    margin: 15px 0 25px 0;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    line-height: 1.8rem;
+    font-size: 1.1rem;
+    font-family: Inter-Regular;
+}
+
+.btn-sign-in {
+    margin: 20px 0 20px 0;
+    text-align: center;
+    display: inline;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    line-height: 2.4rem;
+}
+.footer {
+    margin-top: 20px;
+}
+.footer a {
+    text-decoration: none;
+    font-family: Inter-Regular;
+    font-size: 1.4rem;
+}
+
+.footer a:nth-child(1) {
+    margin-right: 26%;
+}
+.footer a:nth-child(2) {
+    color: var(--text-color);
+}
