@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+    }
+}
+
+/* Small tablet */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    body {
+    }
+}
+
+/* Mobile  */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    body {
+    }
+}
+
+.main_circle {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-row {
+    display: flex;
+}
+
+.circle-row-item {
+    width: 50px;
+    aspect-ratio: 1;
+}
+.circle-row-1 div:nth-child(odd) {
+    background-color: #ffce9e;
+}
+.circle-row-1 div:nth-child(even) {
+    background-color: #d18b47;
+}
+.circle-row-2 div:nth-child(even) {
+    background-color: #ffce9e;
+}
+.circle-row-2 div:nth-child(odd) {
+    background-color: #d18b47;
+}
