@@ -31,7 +31,6 @@
 .circle-row {
     display: flex;
 }
-
 .circle-row-item {
     width: 50px;
     aspect-ratio: 1;
