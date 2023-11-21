@@ -6,115 +6,307 @@
 
 /* Tablet */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    body {
-    }
 }
 
 /* Small tablet */
 @media screen and (min-width: 480px) and (max-width: 768px) {
-    body {
-    }
 }
 
 /* Mobile  */
 @media screen and (min-width: 320px) and (max-width: 480px) {
-    body {
-    }
 }
 
 .web {
-    margin: 50px 50px;
+    margin: 90px 90px;
 }
-.header {
+.hearder {
+    border: 1px solid #ccc;
+}
+.header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #d00404;
+    padding: 0 30px;
 }
-.school h3:nth-child(1) {
-    margin-left: 80px;
-}
-.term {
-    display: flex;
-}
-.gaducation {
-    display: flex;
+.header_left i {
+    padding: 10px 20px;
+    color: white;
 }
 .header_left {
-}
-.header-left-top {
-}
-.underline_left {
-}
-.header-left-bottom h3 {
-    margin-top: 90px;
-    margin-left: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
 .header_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 }
-.underline_left {
-    border: 1px solid black;
-    width: 50%;
-    margin-left: 25%;
+.header_right div:nth-child(2),
+.header_right div:nth-child(3),
+.header_right div:nth-child(4) {
+    padding: 10px 20px;
 }
-
-.underline_header {
-    border: 1px solid black;
-    width: 100%;
+.header-bottom {
+    display: flex;
+    padding-top: 15px;
 }
-
-.grid {
-    display: grid;
-    grid-template-rows: 90px 90px;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px 10px;
+.bottom-left {
+    display: flex;
+    width: 25%;
 }
-.grid-item-1 {
-    background-color: cyan;
-
-    grid-column: 1/6;
-    grid-row: 1/2;
+.bottom-left img {
+    width: 250px;
+    height: 70px;
+    margin-top: 15px;
 }
-
-.item-1-header {
-    width: 100%;
+.header-bottom-middle {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    width: 60%;
 }
-.item-1-middle {
+.hearder-search {
     display: flex;
+    width: 100%;
+    position: relative;
 }
-.item-1-left {
-    display: flex;
-}
-.item-1-right {
-    display: flex;
-}
-.grid-item-2 {
-    background-color: cyan;
+.hearder-search i {
+    width: 80px;
+    height: 43px;
+    background-color: #f5c615;
     display: flex;
     justify-content: center;
     align-items: center;
-    grid-column: 1/2;
-    grid-row: 2/3;
+    font-size: 1.3rem;
+    margin-left: -13%;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    color: white;
 }
-.grid-item-3 {
-    background-color: cyan;
+.hearder-search input {
+    width: 90%;
+    line-height: 2.5rem;
+    border-radius: 25px;
+    border: 2px solid #f5c615;
+}
+.header-bottom-right {
+    width: 15%;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
-    grid-column: 2/6;
-    grid-row: 2/3;
+}
+.header-bottom-right i {
+    font-size: 1.8rem;
+    padding: 10px 10px;
 }
 
-.logo {
-    background-image: url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.inlogo.vn%2Fproduct%2F4637%2Fy-nghia-bieu-tuong-logo-manchester-united.html&psig=AOvVaw1VRJPUWC52xmY_w0552EP4&ust=1700568908385000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCPDgov_G0oIDFQAAAAAdAAAAABAE);
-    width: 50px;
-    height: 50px;
-}
-.ex1 {
+.zero {
+    width: 20px;
+    background-color: #f5c615;
+    height: 20px;
+    border-radius: 5px;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-left: 17px;
+    margin-right: 60px;
+}
+
+.dropdown-menu {
+    width: 300px;
+    background: #d2cfcf;
+    position: relative;
+}
+
+.dropdown-menu .sub-menu {
+    background: white;
+    display: none;
+    position: absolute;
+    margin-left: 100%;
+    margin-top: -13%;
+    width: 60%;
+    z-index: 1000;
+}
+.dropdown-menu li {
+    position: relative;
+    list-style: none;
+}
+.dropdown-menu li:hover {
+    background-color: #ddd;
+}
+.dropdown-menu a {
+    display: block;
+    padding: 10px 10px;
+    color: black;
+    border-bottom: 1px solid #3c3b3b;
+    text-decoration: none;
+}
+.dropdown-menu a:hover {
+    color: #ffff00;
+}
+.dropdown-menu .sub-menu a {
+    padding-left: 28px;
+    color: black;
+}
+.icon-menu {
+    color: #d00404;
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 14px;
+    padding: 8px;
+    cursor: pointer;
+}
+.middle {
+    width: 24%;
+}
+.menu_content {
+    display: flex;
+}
+
+.content-product {
+    width: 76%;
+}
+
+.content {
+    width: 100%;
+}
+.product-line-one {
+    display: flex;
+}
+.product-item {
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+}
+
+.product-line-two {
+    display: flex;
+}
+
+.product-1 {
+    background-image: url(https://cdn.viettablet.com/images/detailed/25/iphone-4-16gb-trang-active.png);
+    width: 200px;
+    height: 400px;
+    margin-top: 16px;
+    margin-left: 15px;
+}
+.product-2 {
+    background-image: url(https://didongmango.com/images/products/2021/10/23/large/serose_1634973633.png);
+    width: 200px;
+    height: 400px;
+    margin-top: 16px;
+    margin-left: 15px;
+}
+.product-3 {
+    background-image: url(https://cdn.tgdd.vn/Products/Images/42/92962/iphone-6-32gb-gold-hh-600x600-600x600-600x600.jpg);
+    width: 200px;
+    height: 400px;
+    margin-top: 16px;
+    margin-left: 15px;
+}
+.product-4 {
+    background-image: url(https://cdn.tgdd.vn/Products/Images/42/87838/iphone-7-256gb-400x400-1-600x600.jpg);
+    width: 200px;
+    height: 400px;
+    margin-top: 16px;
+    margin-left: 15px;
+}
+.product-5 {
+    background-image: url(https://cdn-v2.didongviet.vn/files/products/2023/4/3/1/1683105448516_iphone_8_vang_didongviet.jpg);
+    width: 200px;
+    height: 400px;
+    margin-top: 16px;
+    margin-left: 15px;
+}
+.product-6 {
+    background-image: url(https://cdn2.cellphones.com.vn/x/media/catalog/product/_/z/_z.jpg);
+    width: 200px;
+    height: 400px;
+    margin-top: 16px;
+    margin-left: 15px;
+}
+.product-7 {
+    background-image: url(https://cdn.tgdd.vn/Products/Images/42/114115/iphone-x-64gb-bac-org.png);
+    width: 200px;
+    height: 400px;
+    margin-top: 16px;
+    margin-left: 15px;
+}
+.product-8 {
+    background-image: url(https://www.techone.vn/wp-content/uploads/2019/12/tim.jpg);
+    width: 200px;
+    height: 400px;
+    margin-top: 16px;
+    margin-left: 15px;
+}
+
+.product-name {
+    margin-left: 75px;
+    font-size: 1.1rem;
+}
+.product-name:hover {
+    color: red;
+    cursor: pointer;
+}
+.underline {
+    width: 245px;
+    border: 1px solid #ccc;
+    margin-top: 5px;
+    margin-left: -16px;
+}
+.price {
+    padding-right: 25px;
+    padding-top: 5px;
+}
+.sale {
+    width: 44px;
+    height: 20px;
+    background: red;
+    text-align: center;
+    padding-top: 1px;
+    margin-top: 5px;
+    border-radius: 5px;
+    color: white;
+}
+.not-sale {
+    text-decoration-line: line-through;
+}
+
+.lock {
+    width: 41px;
+    height: 35px;
+    border: 1px solid #ccc;
+    text-align: center;
+    padding-top: 8px;
+    margin-right: 20px;
+}
+.no-name {
+    position: absolute;
+    margin-top: 140%;
+}
+.gia {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.no-name-1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
     font-size: 1.2rem;
 }
-.ex1 h3 {
-    padding: 0 10px;
+.no-name-2 {
+    width: 25%;
+    border: 1px solid #ccc;
+}
+.iphonex {
+    margin-left: 30px !important;
 }
