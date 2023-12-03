@@ -6,48 +6,37 @@
 
 @media (max-width: 740px) {
     #nav > li {
-        display: block;
+        display: block !important;
     }
     #header {
-        display: flex;
+        display: flex !important;
     }
     #header .search-btn {
-        display: none;
+        display: none !important;
     }
     #content .about-text {
-        padding: 0 16px;
+        padding: 0 16px !important;
     }
     .tickets {
-        width: 100%;
+        width: 100% !important;
     }
     .col-third {
-        width: 100%;
-        margin-top: 16px;
+        width: 100% !important;
+        margin-top: 16px !important;
     }
     .content-info {
-        width: 100%;
+        width: 100% !important;
     }
     .col-half {
-        width: 100%;
-        margin-top: 16px;
+        width: 100% !important;
+        margin-top: 16px !important;
     }
     .places-list {
-        display: contents;
+        display: contents !important;
     }
     .content-section .content-content {
-        display: block;
+        display: block !important;
     }
-}
-
-/* PC:>=1024PX
-Tablet : >=740px and <1024px
-Mobile : <740px
- */
-/* Reset CSS */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -178,7 +167,7 @@ html {
     /* background-color: #604c4c; */
     margin-top: 46px;
     padding-top: 50%;
-    background: url('./img/chicago.jpg') top center / cover no-repeat;
+    background: url('../Bai_1/img/chicago.jpg') top center / cover no-repeat;
 }
 #slider .text-content {
     position: absolute;
