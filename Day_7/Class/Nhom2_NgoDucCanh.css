@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* Small tablet */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+}
+
+/* Mobile  */
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+input[type='number'] {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+button {
+    background-color: #4caf50;
+    color: white;
+    padding: 8px 12px;
+    margin: 5px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}

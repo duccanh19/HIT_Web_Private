@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: 740px) {
+    #nav > li {
+        display: block;
+    }
+    #header {
+        display: flex;
+    }
+    #header .search-btn {
+        display: none;
+    }
+    #content .about-text {
+        padding: 0 16px;
+    }
+    .tickets {
+        width: 100%;
+    }
+    .col-third {
+        width: 100%;
+        margin-top: 16px;
+    }
+    .content-info {
+        width: 100%;
+    }
+    .col-half {
+        width: 100%;
+        margin-top: 16px;
+    }
+    .places-list {
+        display: contents;
+    }
+    .content-section .content-content {
+        display: block;
+    }
+}
+
+/* PC:>=1024PX
+Tablet : >=740px and <1024px
+Mobile : <740px
+ */
+/* Reset CSS */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+.mt-8 {
+    margin-top: 8px !important;
+}
+.mt-16 {
+    margin-top: 16px !important;
+}
+.row {
+    margin-left: -8px;
+    margin-right: -8px;
+}
+.row::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+.col {
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.col-third {
+    width: 33, 33333%;
+}
+.col-half {
+    width: 50%;
+}
+.col-full {
+    width: 100%;
+}
+#main #header {
+    position: fixed;
+    width: 100%;
+    height: 46px;
+    background-color: black;
+    top: 0;
+    left: 0;
+    /* right: 0; */
+    padding: 0 16px 0 0;
+    z-index: 1;
+    overflow: hidden;
+}
+.text-white {
+    color: white !important;
+}
+#nav {
+    display: inline-block;
+}
+#nav > li {
+    display: inline-block;
+}
+#nav li {
+    position: relative;
+}
+#nav > li > a {
+    text-transform: uppercase; /*Viết hoa*/
+    color: white;
+}
+#nav li a {
+    display: block;
+    text-decoration: none;
+
+    line-height: 46px;
+    padding: 0 24px;
+}
+#nav li:hover .subnav {
+    display: block;
+}
+#nav > li:hover > a,
+#nav .subnav li:hover a {
+    color: #000;
+    background-color: #ccc;
+}
+
+#nav .subnav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 160px;
+    list-style-type: none;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+#nav .subnav li a {
+    line-height: 34px;
+    color: black;
+}
+#nav .nav-arrow-down {
+    font-size: 1.6px;
+}
+#header .mobile-menu-btn {
+    text-align: center;
+}
+#header .mobile-menu-btn,
+#header .search-btn {
+    float: right;
+    width: 62px;
+    height: 46px;
+    font-size: 1.4rem;
+    background-color: black;
+    color: white;
+    padding: 0px 20px;
+    cursor: pointer;
+}
+#header .menu-icon,
+#header .search-icon {
+    color: white;
+    line-height: 46px;
+    width: 62px;
+}
+#header .search-btn:hover {
+    background-color: orangered;
+}
+#header .menu-icon:hover {
+    background-color: #ccc;
+    color: #000;
+}
+#slider {
+    position: relative;
+    /* min-height: 500px; */
+    /* background-color: #604c4c; */
+    margin-top: 46px;
+    padding-top: 50%;
+    background: url('./img/chicago.jpg') top center / cover no-repeat;
+}
+#slider .text-content {
+    position: absolute;
+    bottom: 47px;
+    color: white;
+    /* left: 50%;
+    transform: translateX(-50%); */
+    width: 100%;
+    text-align: center;
+}
+#slider .text-heading {
+    font-weight: 500;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+#slider .text-description {
+    font-size: 15px;
+}
+#content {
+}
+.content-section {
+    max-width: 800px;
+    /* max-width: 100%; */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 16px;
+}
+#content .section-heading {
+    font-weight: 400;
+    margin: 10px 0;
+    font-size: 30px;
+    text-align: center;
+}
+#content .section-sub-heading {
+    margin: 15xp 0;
+    text-align: center;
+    color: rgb(147, 147, 147);
+    font-size: 15px;
+    line-height: 1.5;
+}
+#content .about-text {
+    margin: 15px 0;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: justify;
+}
+#content .member-list {
+    display: flex;
+    padding: 32px 0;
+}
+#content .member-name {
+    margin: 15px 0;
+    text-align: center !important;
+    font-size: 15px;
+    line-height: 1.5;
+}
+#content .member-item {
+    text-align: center;
+    float: left;
+    width: 33.33333%;
+}
+#content .member-img {
+    margin-bottom: 16px;
+    width: 60%;
+    border-radius: 3px;
+}
+
+#content .tour-section {
+    background-color: black;
+}
+
+#content .content-section {
+}
+#content .section-heading {
+}
+#content .section-sub-heading {
+}
+.tickets {
+    background-color: white;
+    margin-top: 40px;
+    height: 113px;
+    width: 770px;
+}
+.tickets li {
+    font-size: 15px;
+    padding: 8px 16px !important;
+    color: #757575;
+    list-style-type: none;
+    border-bottom: 1px solid #ddd;
+}
+.tickets li .sold-out {
+    background-color: #f44336;
+    color: white;
+    margin-left: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.tickets li .quantity {
+    font-size: 15px;
+    line-height: 1.5;
+    float: right;
+    margin-right: 16px;
+    background-color: #000;
+    color: #fff;
+    padding-left: 8px;
+    padding-right: 8px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.places-list {
+    display: flex;
+    padding: 32px 8px;
+    margin: 0 -16px;
+    height: 534px;
+    width: 800px;
+}
+.places-item {
+    width: 33.33333%;
+    float: left;
+    padding: 0 8px;
+    display: block;
+    margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.places-img {
+    border-style: none;
+    width: 100%;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+}
+.places-body {
+    display: block;
+    padding: 0.15px 16px;
+    background-color: white;
+    color: #000;
+}
+.places-body h3 {
+    margin: 15px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.places-body p {
+    margin: 15px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+.places-body .places-time {
+    color: rgb(180, 180, 180);
+}
+.places-body .places-by-btn {
+    display: inline-block;
+    text-align: center;
+    height: 40px;
+    width: 110px;
+    background-color: #000;
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.places-by-btn:hover {
+    color: #000;
+    background-color: #ccc;
+}
+.content-section .content-content {
+    display: flex;
+    margin-top: 48px;
+}
+.row {
+}
+
+.content-info {
+    font-size: 18px;
+}
+.content-info p i {
+    width: 30px;
+    padding: 4px 0;
+}
+
+.content-form {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.content-form .form-control {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.form-submit-btn {
+    display: block;
+    color: #fff;
+    background-color: #000;
+    float: right;
+    border: none;
+    padding: 8px 16px;
+    text-align: center;
+    cursor: pointer;
+}
+.form-submit-btn:hover {
+    color: #000;
+    background-color: #ccc;
+}
+.map-section img {
+    width: 100%;
+}
+
+#footer {
+    padding: 64px 16px;
+    text-align: center;
+}
+#footer .social-list a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+#footer .social-list a :hover {
+    color: rgba(0, 0, 0, 0.3);
+}

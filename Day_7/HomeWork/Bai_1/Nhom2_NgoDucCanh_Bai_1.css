@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* Small tablet */
+@media screen and (min-width: 480px) and (max-width: 768px) {
+}
+
+/* Mobile  */
+@media screen and (min-width: 320px) and (max-width: 480px) {
+}
+.no-name {
+    margin: 15% 10% 10% 35%;
+}
+
+.number_one {
+    display: flex;
+}
+.number_one div {
+    font-size: 1.4rem;
+    margin-right: 75px;
+}
+.number_one input {
+    line-height: 1.4rem;
+    outline: none;
+}
+.number_two {
+    margin: 20px 0;
+    display: flex;
+}
+.number_two div {
+    font-size: 1.4rem;
+    margin-right: 87px;
+}
+.number_two input {
+    line-height: 1.4rem;
+    outline: none;
+}
+.number-result {
+    margin: 20px 0;
+    display: flex;
+}
+.number-result div {
+    font-size: 1.4rem;
+    margin-right: 10px;
+}
+.number-result input {
+    line-height: 1.4rem;
+    outline: none;
+}
+.input_result {
+    width: 80px;
+    height: 35px;
+    outline: none;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    margin-left: 19%;
+    margin-top: 2%;
+}
