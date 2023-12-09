@@ -14,5 +14,6 @@ const c1 = 5;
 const a2 = 3;
 const b2 = 4;
 const c2 = 8;
+
 console.log(check_triangle(a1, b1, c1));
 console.log(check_triangle(a2, b2, c2));
