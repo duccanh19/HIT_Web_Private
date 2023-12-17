@@ -1,5 +1,5 @@
 insert_string = (s1, s2, p) => {
-    return s2.slice(0, p-1) + s1.slice(0,p) + s2.slice(p-1);
+    return s2.slice(0, p-1) + s1 + s2.slice(p);
 }
   
   var s1 = "000";

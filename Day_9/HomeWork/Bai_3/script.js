@@ -9,5 +9,6 @@ count_last_word = (s) => {
     return 0;
 };
 
+
 console.log('Số ký tự của từ cuối cùng:', count_last_word('Hello World'));
 console.log('Số ký tự của từ cuối cùng:', count_last_word('HTML, CSS, Javascript,'));
