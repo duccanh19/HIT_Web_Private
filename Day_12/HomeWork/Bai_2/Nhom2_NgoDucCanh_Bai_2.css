@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* general styling */
+:root {
+    --smaller: 0.75;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    align-items: center;
+    background-image: url(https://mtcs.1cdn.vn/2020/01/22/moitruong.net.vn-wp-content-uploads-2020-01-_picture1-5.png);
+    display: flex;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue',
+        sans-serif;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.container {
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+}
+
+h1 {
+    font-weight: normal;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+}
+
+li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+}
+
+li span {
+    display: block;
+    font-size: 4.5rem;
+}
+
+.emoji {
+    display: none;
+    padding: 1rem;
+}
+
+.emoji span {
+    font-size: 4rem;
+    padding: 0 0.5rem;
+}
+
+@media all and (max-width: 768px) {
+    h1 {
+        font-size: calc(1.5rem * var(--smaller));
+    }
+
+    li {
+        font-size: calc(1.125rem * var(--smaller));
+    }
+
+    li span {
+        font-size: calc(3.375rem * var(--smaller));
+    }
+}
+.container2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container2 .drop {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    box-shadow: 9px 9px 18px #685f51;
+}
+.clock {
+    width: 350px;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../Bai_2/img/clock.png);
+    background-size: cover;
+}
+.clock::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #5e5c5c;
+    border-radius: 50%;
+    z-index: 1000;
+}
+.clock .hour,
+.clock .min,
+.clock .sec {
+    position: absolute;
+}
+.clock .hour,
+.hr {
+    width: 150px;
+    height: 150px;
+}
+.clock .min,
+.mn {
+    width: 200px;
+    height: 200px;
+}
+.clock .sec,
+.sc {
+    width: 230px;
+    height: 230px;
+}
+.hr,
+.mn,
+.sc {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    border-radius: 50%;
+}
+.hr::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: black;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+.mn::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 90px;
+    background: rgb(73, 76, 255);
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+.sc::before {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 150px;
+    background: red;
+    z-index: 12;
+    border-radius: 6px 6px 0 0;
+}

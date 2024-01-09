@@ -3,7 +3,6 @@ const catAges = [1, 3, 4, 2, 5, 6, 1, 2, 3, 4, 2, 7];
 
 // Tìm mảng mới chứa tuổi của chủ nhân của các con mèo
 const ownerAges = catAges.map((age) => {
-   
     if (age <= 2) {
         return age * 2;
     } else {

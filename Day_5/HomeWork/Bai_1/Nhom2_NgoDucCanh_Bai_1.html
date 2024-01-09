@@ -469,9 +469,12 @@
                         behavior: 'smooth',
                     });
                 });
+
                 processes.forEach((pro) => {
                     pro.style.setProperty('--process', pro.dataset.number);
+                    console.log(pro.dataset.number);
                 });
+                
             </script>
         </div>
     </body>

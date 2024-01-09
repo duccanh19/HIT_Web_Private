@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Đức Cảnh : 19</title>
+        <link
+            rel="icon"
+            href="https://media.istockphoto.com/id/1222850290/vi/vec-to/s%E1%BB%91-19-19-vector-desing-logo-n%C4%83ng-%C4%91%E1%BB%99ng-t%C3%A1ch-m%C3%A0u-b%C3%B3ng-c%E1%BB%A7a-s%E1%BB%91-%C4%91%E1%BB%8F-xanh-l%C3%A1-c%C3%A2y-xanh-d%C6%B0%C6%A1ng-trong.jpg?s=2048x2048&w=is&k=20&c=YPfDRLH2DjbQICElNF1CrHwk2ku1nmdXH9tJeCUbZUA="
+            type="image/gif"
+            sizes="20x20"
+        />
+        <link rel="stylesheet" href="../../HomeWork/Bai_2/Nhom2_NgoDucCanh_Bai_2.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://unpkg.com/feather-icons"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1 id="headline" style="color: #f85032; /* fallback for old browsers */ font-weight: bold">
+                Countdown to HIT birthday
+            </h1>
+            <div id="countdown">
+                <ul>
+                    <li><span id="days"></span>days</li>
+                    <li><span id="hours"></span>Hours</li>
+                    <li><span id="minutes"></span>Minutes</li>
+                    <li><span id="seconds"></span>Seconds</li>
+                </ul>
+            </div>
+            <div id="content" class="emoji">
+                <span>🥳</span>
+                <span>🎉</span>
+                <span>🎂</span>
+            </div>
+            <div class="container2">
+                <div class="drop">
+                    <div class="clock">
+                        <div class="hour">
+                            <div class="hr" id="h"></div>
+                        </div>
+                        <div class="min">
+                            <div class="mn" id="m"></div>
+                        </div>
+                        <div class="sec">
+                            <div class="sc" id="s"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            let hr = document.getElementById('h');
+            let mn = document.getElementById('m');
+            let sc = document.getElementById('s');
+
+            function displayTime() {
+                let date = new Date();
+
+                let hh = date.getHours();
+                let mm = date.getMinutes();
+                let ss = date.getSeconds();
+
+                let hrotation = 30 * hh + mm / 2;
+                let mrotation = 6 * mm;
+                let srotation = 6 * ss;
+
+                hr.style.transform = `rotate(${hrotation}deg)`;
+                mn.style.transform = `rotate(${mrotation}deg)`;
+                sc.style.transform = `rotate(${srotation}deg)`;
+            }
+            setInterval(displayTime, 1000);
+
+            (function () {
+                const second = 1000,
+                    minute = second * 60,
+                    hour = minute * 60,
+                    day = hour * 24;
+
+                //I'm adding this section so I don't have to keep updating this pen every year :-)
+                //remove this if you don't need it
+                let today = new Date(),
+                    dd = String(today.getDate()).padStart(2, '0'),
+                    mm = String(today.getMonth() + 1).padStart(2, '0'),
+                    yyyy = today.getFullYear(),
+                    nextYear = yyyy + 1,
+                    dayMonth = '08/18/',
+                    birthday = dayMonth + yyyy;
+
+                today = mm + '/' + dd + '/' + yyyy;
+                if (today > birthday) {
+                    birthday = dayMonth + nextYear;
+                }
+                //end
+                const countDown = new Date(birthday).getTime(),
+                    x = setInterval(function () {
+                        const now = new Date().getTime(),
+                            distance = countDown - now;
+
+                        (document.getElementById('days').innerText = Math.floor(distance / day)),
+                            (document.getElementById('hours').innerText = Math.floor((distance % day) / hour)),
+                            (document.getElementById('minutes').innerText = Math.floor((distance % hour) / minute)),
+                            (document.getElementById('seconds').innerText = Math.floor((distance % minute) / second));
+
+                        //do something later when date is reached
+                        if (distance < 0) {
+                            document.getElementById('headline').innerText = "It's my birthday!";
+                            document.getElementById('countdown').style.display = 'none';
+                            document.getElementById('content').style.display = 'block';
+                            clearInterval(x);
+                        }
+                        //seconds
+                    }, 0);
+            })();
+        </script>
+    </body>
+</html>

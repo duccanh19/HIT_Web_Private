@@ -12,6 +12,8 @@ dogs.forEach((dog) => {
     console.log(dog);
 });
 
+
+
 // Tìm chú chó của Sarah và kiểm tra xem nó ăn quá nhiều hay quá ít
 const sarahDog = dogs.find((dog) => dog.owners.includes('Sarah'));
 if (sarahDog) {
