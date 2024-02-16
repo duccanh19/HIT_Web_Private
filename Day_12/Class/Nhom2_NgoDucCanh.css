@@ -5,10 +5,12 @@
 }
 
 /* Tablet */
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 }
 
 /* Small tablet */
+
 @media screen and (min-width: 480px) and (max-width: 768px) {
 }
 
@@ -16,4 +18,94 @@
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
 }
+.nav > li {
+    float: left;
+}
+.nav li {
+    list-style: none;
+}
+.nav li a {
+    text-decoration: none;
+}
+.nav > li > a {
+    padding: 10px 30px;
+    background-color: blue;
+    color: white;
+    text-decoration: none;
+    /* margin-right: 15px; */
+}
 
+.sub-menu {
+    display: none;
+}
+
+.sub-menu > li {
+    padding: 10px 10px;
+    background-color: red;
+    color: white;
+}
+.sub-menu > li > a {
+    padding: 0 10px;
+}
+.sub-menu > li:hover {
+    background-color: burlywood;
+}
+.sub-menu > li > a:hover {
+    color: black;
+}
+.nav > li:hover .sub-menu {
+    display: block;
+}
+
+/* nav2 */
+
+.nav2 li {
+    list-style: none;
+}
+.nav2 li a {
+    text-decoration: none;
+}
+.nav2 > li {
+    padding: 10px 20px;
+    background-color: blue;
+    width: 100px;
+}
+.sub-menu2 {
+    display: none;
+}
+.sub-menu2 li {
+    padding: 10px 0;
+}
+.nav2 li:hover .sub-menu2 {
+    display: block;
+}
+.nav3 > li {
+    width: 100px;
+    padding: 10px 20px;
+    background-color: blue;
+}
+.nav3 li {
+    list-style: none;
+    position: relative;
+}
+.nav3 li a {
+    text-decoration: none;
+}
+.sub-menu3 {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 200px;
+    background-color: #eee;
+}
+.sub-menu3 li {
+    background-color: red;
+    padding: 10px 20px;
+}
+.nav3 li:hover .sub-menu3 {
+    display: block;
+}
+.sub-menu3 li:hover {
+    background-color: aqua;
+}

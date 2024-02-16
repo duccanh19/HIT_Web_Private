@@ -20,11 +20,80 @@
             referrerpolicy="no-referrer"
         />
     </head>
+
     <body>
-        <div onclick="onclick()" style="height: 300vh">Canh</div>
+        <ul class="nav">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Abouts </a>
+                <ul class="sub-menu">
+                    <li><a href="#">About 1</a></li>
+                    <li><a href="#">About 2</a></li>
+                    <li><a href="#">About 3</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Contact</a>
+            </li>
+        </ul>
+
+        <div style="padding-top: 100px">
+            <div>Dai</div>
+            <input type="number" name="" id="dai" />
+            <div>rong</div>
+            <input type="number" name="" id="rong" />
+            <div>KETQUA</div>
+            <input type="text" name="" id="kq" />
+            <button onclick="handleOnclick()">KQ</button>
+        </div>
+
+        <div style="padding-top: 100px">
+            <ul class="nav2">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Abouts </a>
+                    <ul class="sub-menu2">
+                        <li><a href="#">About 1</a></li>
+                        <li><a href="#">About 2</a></li>
+                        <li><a href="#">About 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+
+        <div style="padding-top: 100px">
+            <ul class="nav3">
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                <li>
+                    <a href="#">Abouts </a>
+                    <ul class="sub-menu3">
+                        <li><a href="#">About 1</a></li>
+                        <li><a href="#">About 2</a></li>
+                        <li><a href="#">About 3</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+
         <script>
-            onclick = (event) => {
-                console.log('19', event.pageX, event.pageY);
+            handleOnclick = () => {
+                var a = parseInt(document.getElementById('dai').value);
+                var b = parseInt(document.getElementById('rong').value);
+                var kq = a * b;
+                console.log(a, b);
+                document.getElementById('kq').value = kq;
             };
         </script>
     </body>

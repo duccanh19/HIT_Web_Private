@@ -17,3 +17,31 @@
 @media screen and (min-width: 320px) and (max-width: 480px) {
 }
 
+.nav > li {
+    float: left;
+    margin-right: 15px;
+}
+.sub-menu {
+    display: none;
+}
+.nav li:hover .sub-menu {
+    display: block;
+}
+.nav li {
+    list-style: none;
+}
+.nav > li > a {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: cyan;
+    color: white;
+}
+
+.sub-menu > li {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+}
+.sub-menu > li > a {
+    text-decoration: none;
+}
