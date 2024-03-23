@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<!-- Last Published: Fri Mar 15 2024 16:16:21 GMT+0000 (Coordinated Universal Time) -->
+<html
+    data-wf-domain="strut.so"
+    data-wf-page="65543b84557c8b888d23b4ea"
+    data-wf-site="64cbf5f3e6b7ac5a79b0d3fc"
+    lang="en"
+>
+    <head>
+        <meta charset="utf-8" />
+        <title>Strut — The all-in-one AI workspace for writing</title>
+        <meta
+            content="Strut combines the tools you need to run your entire writing process — capture projects, notes, drafts, and more in collaborative workspaces powered by AI."
+            name="description"
+        />
+        <meta content="Strut — The all-in-one AI workspace for writing" property="og:title" />
+        <meta
+            content="Strut combines the tools you need to run your entire writing process — capture projects, notes, drafts, and more in collaborative workspaces powered by AI."
+            property="og:description"
+        />
+        <meta
+            content="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/65713fb4782ba81c8f9ff4f4_OG-Image.jpg"
+            property="og:image"
+        />
+        <meta content="Strut — The all-in-one AI workspace for writing" property="twitter:title" />
+        <meta
+            content="Strut combines the tools you need to run your entire writing process — capture projects, notes, drafts, and more in collaborative workspaces powered by AI."
+            property="twitter:description"
+        />
+        <meta
+            content="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/65713fb4782ba81c8f9ff4f4_OG-Image.jpg"
+            property="twitter:image"
+        />
+        <meta property="og:type" content="website" />
+        <meta content="summary_large_image" name="twitter:card" />
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="TlhXGouzuUz3YUiBv9Tr_fMsK7rZCcn8l1SQNErYpwY" name="google-site-verification" />
+        <link
+            href="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/css/strutai.webflow.a15952b6e.min.css"
+            rel="stylesheet"
+            type="text/css"
+        />
+        <link href="https://fonts.googleapis.com" rel="preconnect" />
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+        <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            WebFont.load({ google: { families: ['Inter:regular,500,600,700'] } });
+        </script>
+        <script type="text/javascript">
+            !(function (o, c) {
+                var n = c.documentElement,
+                    t = ' w-mod-';
+                (n.className += t + 'js'),
+                    ('ontouchstart' in o || (o.DocumentTouch && c instanceof DocumentTouch)) &&
+                        (n.className += t + 'touch');
+            })(window, document);
+        </script>
+        <link
+            href="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/64f96a80a9fd816566fc4763_favicon.png"
+            rel="shortcut icon"
+            type="image/x-icon"
+        />
+        <link
+            href="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/6508d2b172cb25c63e3fc0d4_logo256.png"
+            rel="apple-touch-icon"
+        />
+        <meta name="google-site-verification" content="TlhXGouzuUz3YUiBv9Tr_fMsK7rZCcn8l1SQNErYpwY" />
+        <style>
+            body {
+                -webkit-font-smoothing: antialiased;
+            }
+            .hidden {
+                display: none;
+            }
+        </style>
+        <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+        <script>
+            /* eslint-disable no-undef */
+            let auth0Client = null;
+            const authConfig = {
+                domain: 'auth.strut.so',
+                clientId: 'gfrlDk7esjvXwnIvjPrxh26597A1Qjkb',
+            };
+
+            const configureClient = async () => {
+                auth0Client = await auth0.createAuth0Client({
+                    domain: authConfig.domain,
+                    clientId: authConfig.clientId,
+                });
+            };
+
+            const updateUI = async () => {
+                const isAuthenticated = await auth0Client.isAuthenticated();
+
+                document.getElementById('btn-login').onclick = () => {
+                    try {
+                        gtag('event', 'login', {
+                            authenticated: isAuthenticated,
+                        });
+                    } catch (error) {
+                        console.error(error);
+                    }
+                    login();
+                };
+                if (document.getElementById('btn-getstarted1')) {
+                    document.getElementById('btn-getstarted1').onclick = () => {
+                        try {
+                            gtag('event', 'get_started', {
+                                authenticated: isAuthenticated,
+                            });
+                        } catch (error) {
+                            console.error(error);
+                        }
+                        isAuthenticated ? (window.location = '/inbox') : signup();
+                    };
+                }
+                document.getElementById('btn-getstarted2').onclick = () => {
+                    try {
+                        gtag('event', 'get_started', {
+                            authenticated: isAuthenticated,
+                        });
+                    } catch (error) {
+                        console.error(error);
+                    }
+                    isAuthenticated ? (window.location = '/inbox') : signup();
+                };
+                document.getElementById('btn-signup').onclick = () => {
+                    try {
+                        gtag('event', 'signup', {
+                            authenticated: isAuthenticated,
+                        });
+                    } catch (error) {
+                        console.error(error);
+                    }
+                    signup();
+                };
+
+                if (isAuthenticated) {
+                    document.getElementById('btn-login').innerHTML = 'Go to app \u2192';
+                    document.getElementById('btn-signup').classList.add('hidden');
+                }
+            };
+
+            const login = async () => {
+                if (window.todesktop) {
+                    return (window.location = 'https://strut.so/inbox');
+                }
+                await auth0Client.loginWithRedirect({
+                    authorizationParams: {
+                        redirect_uri: window.location.origin + '/inbox',
+                    },
+                });
+            };
+
+            const signup = async () => {
+                if (window.todesktop) {
+                    return (window.location = 'https://strut.so/inbox');
+                }
+                await auth0Client.loginWithRedirect({
+                    authorizationParams: {
+                        screen_hint: 'signup',
+                        redirect_uri: window.location.origin + '/inbox',
+                    },
+                });
+            };
+
+            window.onload = async () => {
+                await configureClient();
+                updateUI();
+            };
+        </script>
+        <script>
+            !(function () {
+                var analytics = (window.analytics = window.analytics || []);
+                if (!analytics.initialize)
+                    if (analytics.invoked)
+                        window.console && console.error && console.error('Segment snippet included twice.');
+                    else {
+                        analytics.invoked = !0;
+                        analytics.methods = [
+                            'trackSubmit',
+                            'trackClick',
+                            'trackLink',
+                            'trackForm',
+                            'pageview',
+                            'identify',
+                            'reset',
+                            'group',
+                            'track',
+                            'ready',
+                            'alias',
+                            'debug',
+                            'page',
+                            'once',
+                            'off',
+                            'on',
+                            'addSourceMiddleware',
+                            'addIntegrationMiddleware',
+                            'setAnonymousId',
+                            'addDestinationMiddleware',
+                        ];
+                        analytics.factory = function (e) {
+                            return function () {
+                                if (window.analytics.initialized)
+                                    return window.analytics[e].apply(window.analytics, arguments);
+                                var i = Array.prototype.slice.call(arguments);
+                                i.unshift(e);
+                                analytics.push(i);
+                                return analytics;
+                            };
+                        };
+                        for (var i = 0; i < analytics.methods.length; i++) {
+                            var key = analytics.methods[i];
+                            analytics[key] = analytics.factory(key);
+                        }
+                        analytics.load = function (key, i) {
+                            var t = document.createElement('script');
+                            t.type = 'text/javascript';
+                            t.async = !0;
+                            t.src = 'https://cdn.segment.com/analytics.js/v1/' + key + '/analytics.min.js';
+                            var n = document.getElementsByTagName('script')[0];
+                            n.parentNode.insertBefore(t, n);
+                            analytics._loadOptions = i;
+                        };
+                        analytics._writeKey = 'YB50E5RG5QRc5pJZhyCr2aApHAqrvBLm';
+                        analytics.SNIPPET_VERSION = '4.16.1';
+                        analytics.load('YB50E5RG5QRc5pJZhyCr2aApHAqrvBLm');
+                        analytics.page();
+                    }
+            })();
+        </script>
+        <style>
+            .sub-section,
+            .brand-container,
+            .navigator-container {
+                -webkit-transform: translate3d(0, 0, 0);
+            }
+        </style>
+    </head>
+    <body class="home">
+        <nav class="navigation-container">
+            <div class="navigation">
+                <div class="navigation-left">
+                    <a href="/" aria-current="page" class="navigation-logo w-inline-block w--current"
+                        ><div id="Logo" class="html-embed-12 w-embed">
+                            <svg
+                                width="51"
+                                height="13"
+                                viewBox="0 0 51 13"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M45.8019 12.393C45.62 12.393 45.4712 12.2438 45.4712 12.0615V2.96204C45.4712 2.86259 45.4051 2.7963 45.3059 2.7963H43.1236C42.9418 2.7963 42.793 2.64713 42.793 2.4648V1.12226C42.793 0.939943 42.9418 0.790771 43.1236 0.790771H49.8193C50.0011 0.790771 50.1499 0.939943 50.1499 1.12226V2.4648C50.1499 2.64713 50.0011 2.7963 49.8193 2.7963H47.637C47.5378 2.7963 47.4717 2.86259 47.4717 2.96204V12.0615C47.4717 12.2438 47.3229 12.393 47.141 12.393H45.8019Z"
+                                    fill="currentColor"
+                                />
+                                <path
+                                    d="M35.9377 12.5919C33.9372 12.5919 32.2344 11.4151 32.2344 8.87917V1.12226C32.2344 0.939943 32.3832 0.790771 32.565 0.790771H33.9042C34.086 0.790771 34.2348 0.939943 34.2348 1.12226V8.87917C34.2348 9.95652 34.9622 10.5864 35.9377 10.5864C36.9461 10.5864 37.6736 9.95652 37.6736 8.87917V1.12226C37.6736 0.939943 37.8224 0.790771 38.0042 0.790771H39.3433C39.5252 0.790771 39.674 0.939943 39.674 1.12226V8.87917C39.674 11.4151 37.9711 12.5919 35.9377 12.5919Z"
+                                    fill="currentColor"
+                                />
+                                <path
+                                    d="M21.7603 12.393C21.5785 12.393 21.4297 12.2438 21.4297 12.0615V1.12226C21.4297 0.939943 21.5785 0.790771 21.7603 0.790771H25.0668C27.1995 0.790771 28.6544 2.28248 28.6544 4.37088C28.6544 5.76315 27.9104 6.74105 26.9185 7.42061C26.687 7.58635 26.687 7.70237 26.8027 7.93442L28.5883 11.846C28.7205 12.1278 28.6048 12.393 28.3072 12.393H26.9681C26.7201 12.393 26.6044 12.277 26.5217 12.0946L24.7197 8.08359C24.6701 7.96757 24.6039 7.91784 24.4551 7.91784H23.5954C23.4963 7.91784 23.4301 7.98414 23.4301 8.08359V12.0615C23.4301 12.2438 23.2813 12.393 23.0995 12.393H21.7603ZM23.4301 5.81287C23.4301 5.91232 23.4963 5.97862 23.5954 5.97862H25.0503C25.9265 5.97862 26.5878 5.26591 26.5878 4.37088C26.5878 3.39298 25.9265 2.76315 25.0503 2.76315H23.5954C23.4963 2.76315 23.4301 2.82945 23.4301 2.92889V5.81287Z"
+                                    fill="currentColor"
+                                />
+                                <path
+                                    d="M13.8839 12.393C13.7021 12.393 13.5533 12.2438 13.5533 12.0615V2.96204C13.5533 2.86259 13.4871 2.7963 13.3879 2.7963H11.2056C11.0238 2.7963 10.875 2.64713 10.875 2.4648V1.12226C10.875 0.939943 11.0238 0.790771 11.2056 0.790771H17.9013C18.0832 0.790771 18.232 0.939943 18.232 1.12226V2.4648C18.232 2.64713 18.0832 2.7963 17.9013 2.7963H15.719C15.6198 2.7963 15.5537 2.86259 15.5537 2.96204V12.0615C15.5537 12.2438 15.4049 12.393 15.223 12.393H13.8839Z"
+                                    fill="currentColor"
+                                />
+                                <path
+                                    d="M4.35179 12.592C2.10338 12.592 0.433594 11.2495 0.433594 8.97878V8.89591C0.433594 8.71359 0.582386 8.56442 0.764244 8.56442H2.16951C2.35136 8.56442 2.50015 8.71359 2.50015 8.89591V9.04508C2.50015 10.0561 3.27718 10.7025 4.33526 10.7025C5.39334 10.7025 6.12077 10.0396 6.12077 9.14453C6.12077 8.29922 5.59173 7.81856 4.64938 7.55337L3.29371 7.17215C1.78926 6.74121 0.747711 5.64729 0.747711 3.90696C0.747711 1.95116 2.3183 0.592041 4.40139 0.592041C6.50102 0.592041 8.00547 1.88486 8.00547 3.82408V3.97326C8.00547 4.15558 7.85668 4.30475 7.67482 4.30475H6.31916C6.1373 4.30475 5.98851 4.15558 5.98851 3.97326V3.84066C5.98851 2.99536 5.37681 2.48154 4.40139 2.48154C3.45904 2.48154 2.79774 2.99536 2.79774 3.82408C2.79774 4.65281 3.37638 5.06718 4.23607 5.33237L5.50907 5.71359C7.17885 6.21083 8.1708 7.23845 8.1708 9.04508C8.1708 11.1666 6.58368 12.592 4.35179 12.592Z"
+                                    fill="currentColor"
+                                />
+                            </svg></div
+                    ></a>
+                </div>
+                <div class="navigation-right">
+                    <a id="btn-login" href="#" class="button w-inline-block"><div>Log In</div></a
+                    ><a id="btn-signup" href="#" class="button secondary w-inline-block"><div>Sign Up</div></a>
+                </div>
+            </div>
+        </nav>
+        <section data-w-id="a8c32838-ec56-e195-26ec-6593b31f2da8" class="homepage-hero">
+            <div class="hero-heading-wrapper">
+                <h1
+                    data-w-id="c639e6a8-d597-414a-051b-1fad4333685a"
+                    style="
+                        -webkit-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0)
+                            skew(0, 0);
+                        -moz-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0)
+                            skew(0, 0);
+                        -ms-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0)
+                            skew(0, 0);
+                        transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                        opacity: 0;
+                    "
+                    class="hero-heading"
+                >
+                    The all-in-one <br />AI workspace for writers<br />
+                </h1>
+                <p
+                    data-w-id="384abd61-885a-ec48-b7ba-fbd71ae7da01"
+                    style="
+                        -webkit-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0)
+                            skew(0, 0);
+                        -moz-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0)
+                            skew(0, 0);
+                        -ms-transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0)
+                            skew(0, 0);
+                        transform: translate3d(0, 40px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);
+                        opacity: 0;
+                    "
+                    class="hero-subheading"
+                >
+                    Strut combines the tools you need to run your entire writing process — capture projects, notes,
+                    drafts, and more in collaborative workspaces powered by AI.<br />
+                </p>
+                <a
+                    id="btn-getstarted1"
+                    data-w-id="6a341eab-fbe2-1902-6c54-4b7e41326f26"
+                    style="opacity: 0"
+                    href="https://strut.so/new"
+                    class="link w-inline-block"
+                    ><div>Get Started</div>
+                    <div class="html-embed-15 w-embed">
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M6.834 1.12804C6.76212 1.06352 6.67309 1.0212 6.57767 1.00619C6.48226 0.991187 6.38453 1.00414 6.29632 1.04349C6.20811 1.08283 6.13318 1.14689 6.08059 1.22791C6.02801 1.30893 6.00002 1.40345 6 1.50004V5.00004H1C0.734784 5.00004 0.48043 5.1054 0.292893 5.29294C0.105357 5.48047 0 5.73483 0 6.00004C0 6.26526 0.105357 6.51961 0.292893 6.70715C0.48043 6.89468 0.734784 7.00004 1 7.00004H6V10.5C6.00002 10.5966 6.02801 10.6912 6.08059 10.7722C6.13318 10.8532 6.20811 10.9172 6.29632 10.9566C6.38453 10.9959 6.48226 11.0089 6.57767 10.9939C6.67309 10.9789 6.76212 10.9366 6.834 10.872L11.834 6.37204C11.8862 6.32515 11.928 6.26779 11.9566 6.2037C11.9851 6.13961 11.9999 6.07022 11.9999 6.00004C11.9999 5.92986 11.9851 5.86047 11.9566 5.79638C11.928 5.73229 11.8862 5.67493 11.834 5.62804L6.834 1.12804Z"
+                                fill="currentColor"
+                            />
+                        </svg></div
+                ></a>
+            </div>
+            <div
+                data-w-id="77a1523e-951f-0594-9151-fa64efbea581"
+                style="
+                    -webkit-transform: translate3d(0, 40px, 0) scale3d(1.05, 1.05, 1) rotateX(0) rotateY(0) rotateZ(0)
+                        skew(0, 0);
+                    -moz-transform: translate3d(0, 40px, 0) scale3d(1.05, 1.05, 1) rotateX(0) rotateY(0) rotateZ(0)
+                        skew(0, 0);
+                    -ms-transform: translate3d(0, 40px, 0) scale3d(1.05, 1.05, 1) rotateX(0) rotateY(0) rotateZ(0)
+                        skew(0, 0);
+                    transform: translate3d(0, 40px, 0) scale3d(1.05, 1.05, 1) rotateX(0) rotateY(0) rotateZ(0)
+                        skew(0, 0);
+                    opacity: 0;
+                "
+                class="hero-image-container"
+            >
+                <div class="div-block-100">
+                    <img
+                        src="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/658383ed043fa86628326e8e_Kanban.jpg"
+                        loading="eager"
+                        sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, 97vw"
+                        srcset="
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/658383ed043fa86628326e8e_Kanban-p-500.jpg   500w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/658383ed043fa86628326e8e_Kanban-p-800.jpg   800w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/658383ed043fa86628326e8e_Kanban-p-1080.jpg 1080w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/658383ed043fa86628326e8e_Kanban-p-1600.jpg 1600w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/658383ed043fa86628326e8e_Kanban-p-2000.jpg 2000w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/658383ed043fa86628326e8e_Kanban.jpg        2160w
+                        "
+                        alt="Screenshot of Strut AI app"
+                        class="image-20"
+                    />
+                </div>
+                <div class="bg-gradient"></div>
+                <div class="div-block-134">
+                    <div class="div-block-135">
+                        <img
+                            src="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e1494c7484620cdee_Mention.png"
+                            width="480"
+                            alt=""
+                            style="
+                                opacity: 0;
+                                -webkit-transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0)
+                                    rotateZ(0) skew(0, 0);
+                                -moz-transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0)
+                                    rotateZ(0) skew(0, 0);
+                                -ms-transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0)
+                                    rotateZ(0) skew(0, 0);
+                                transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0)
+                                    skew(0, 0);
+                            "
+                            sizes="(max-width: 767px) 100vw, 410px"
+                            data-w-id="6eca2955-7261-edd6-ce09-d7f4ea6127fb"
+                            loading="lazy"
+                            srcset="
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e1494c7484620cdee_Mention-p-500.png 500w,
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e1494c7484620cdee_Mention-p-800.png 800w,
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e1494c7484620cdee_Mention.png       960w
+                            "
+                        />
+                    </div>
+                    <div class="div-block-136">
+                        <img
+                            src="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e064f4697d18493e5_Status.png"
+                            width="285"
+                            alt=""
+                            style="
+                                opacity: 0;
+                                -webkit-transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0)
+                                    rotateZ(0) skew(0, 0);
+                                -moz-transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0)
+                                    rotateZ(0) skew(0, 0);
+                                -ms-transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0)
+                                    rotateZ(0) skew(0, 0);
+                                transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0)
+                                    skew(0, 0);
+                            "
+                            sizes="(max-width: 767px) 100vw, 230px"
+                            data-w-id="08746a6b-7a50-1b1a-80e2-3beb4c780812"
+                            loading="lazy"
+                            srcset="
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e064f4697d18493e5_Status-p-500.png 500w,
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e064f4697d18493e5_Status.png       570w
+                            "
+                        />
+                    </div>
+                    <div class="div-block-137">
+                        <img
+                            src="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e3e55073ed8f1bbdf_Document.png"
+                            width="382.5"
+                            alt=""
+                            style="
+                                opacity: 0;
+                                -webkit-transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0)
+                                    rotateZ(0) skew(0, 0);
+                                -moz-transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0)
+                                    rotateZ(0) skew(0, 0);
+                                -ms-transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0)
+                                    rotateZ(0) skew(0, 0);
+                                transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0)
+                                    skew(0, 0);
+                            "
+                            sizes="(max-width: 767px) 100vw, 280px"
+                            data-w-id="1c6b61ae-1322-9fd9-32f2-c7af04f4dfd1"
+                            loading="lazy"
+                            srcset="
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e3e55073ed8f1bbdf_Document-p-500.png 500w,
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e3e55073ed8f1bbdf_Document.png       765w
+                            "
+                        />
+                    </div>
+                    <div class="div-block-138">
+                        <img
+                            src="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e1494c7484620cfba_CMDK.png"
+                            width="480"
+                            alt=""
+                            style="
+                                opacity: 0;
+                                -webkit-transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0)
+                                    rotateZ(0) skew(0, 0);
+                                -moz-transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0)
+                                    rotateZ(0) skew(0, 0);
+                                -ms-transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0)
+                                    rotateZ(0) skew(0, 0);
+                                transform: translate3d(0, 0, 0) scale3d(0.9, 0.9, 1) rotateX(0) rotateY(0) rotateZ(0)
+                                    skew(0, 0);
+                            "
+                            sizes="(max-width: 767px) 100vw, 420px"
+                            data-w-id="16dfd720-eb96-c81a-4f98-c12bcb969acf"
+                            loading="lazy"
+                            srcset="
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e1494c7484620cfba_CMDK-p-500.png   500w,
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e1494c7484620cfba_CMDK-p-800.png   800w,
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e1494c7484620cfba_CMDK-p-1080.png 1080w,
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/656a813e1494c7484620cfba_CMDK.png        1284w
+                            "
+                        />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="organization-container">
+            <div class="organize-chaos-wrapper">
+                <div class="section-label">
+                    <div class="w-embed">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                            <g fill="currentColor">
+                                <path
+                                    d="M11,5.8A2.5,2.5,0,0,0,9.273,4.622L6,4.076V1A1,1,0,0,0,4,1V7.5a.5.5,0,0,1-1,0V5H2.5A1.5,1.5,0,0,0,1,6.5v2a4.173,4.173,0,0,0,2.276,3.447A.5.5,0,0,0,3.5,12h6a.5.5,0,0,0,.475-.342l1.259-3.78A2.492,2.492,0,0,0,11,5.8Z"
+                                    fill="currentColor"
+                                ></path>
+                            </g>
+                        </svg>
+                    </div>
+                    <div>Drag &amp; Drop Organization</div>
+                </div>
+                <h2 class="section-heading">Organize Writing Chaos</h2>
+                <p class="subheading">
+                    Notes, drafts, outlines — even the best process can get messy. Strut organizes your writing process
+                    for you. <br /><br />Quickly capture and organize your content in flexible, collaborative
+                    workspaces.
+                </p>
+            </div>
+            <div data-w-id="3bccf43a-f6b2-e04b-203b-05c97dec765b" class="div-block-105-copy">
+                <div data-w-id="3bccf43a-f6b2-e04b-203b-05c97dec765c" class="div-block-104-copy">
+                    <img
+                        src="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/65571a827314dfd6242c28bb_Organization.png"
+                        loading="lazy"
+                        sizes="(max-width: 479px) 97vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, 88vw"
+                        srcset="
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/65571a827314dfd6242c28bb_Organization-p-500.png   500w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/65571a827314dfd6242c28bb_Organization-p-800.png   800w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/65571a827314dfd6242c28bb_Organization-p-1080.png 1080w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/65571a827314dfd6242c28bb_Organization-p-1600.png 1600w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/65571a827314dfd6242c28bb_Organization-p-2000.png 2000w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/65571a827314dfd6242c28bb_Organization.png        2416w
+                        "
+                        alt="Screenshot of Strut&#x27;s drag and drop interface"
+                    />
+                    <div class="div-block-116">
+                        <img
+                            src="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/6557052d70c912a737ea4cad_Drag.png"
+                            loading="lazy"
+                            width="365"
+                            sizes="(max-width: 479px) 96px, (max-width: 767px) 196px, (max-width: 991px) 256px, 365px"
+                            alt=""
+                            srcset="
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/6557052d70c912a737ea4cad_Drag-p-500.png 500w,
+                                https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/6557052d70c912a737ea4cad_Drag.png       730w
+                            "
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="sub-section">
+                <div id="w-node-b3ae3879-ad3d-f72f-d992-17dbd664f636-8d23b4ea" class="sub-section-item">
+                    <div class="sub-section-wrapper">
+                        <div class="sub-section-title-wrapper">
+                            <div class="sub-section-icon w-embed">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                    <g fill="currentColor">
+                                        <path
+                                            d="M6,0a6,6,0,1,0,6,6A6,6,0,0,0,6,0ZM2,6A4,4,0,0,1,6,2v8A4,4,0,0,1,2,6Z"
+                                            fill="currentColor"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="sub-section-title">Customizable</div>
+                        </div>
+                        <div class="sub-section-text">
+                            Use Strut’s pre-made stages or customize to your own process.
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-section-item">
+                    <div class="sub-section-wrapper">
+                        <div class="sub-section-title-wrapper">
+                            <div class="sub-section-icon w-embed">
+                                <svg
+                                    width="12"
+                                    height="12"
+                                    viewBox="0 0 12 12"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M10.5 0H1.5C0.67125 0 0 0.67125 0 1.5V8.25C0 9.07875 0.67125 9.75 1.5 9.75H3.9495L5.712 11.865C5.78325 11.9505 5.88825 12 6 12C6.11175 12 6.21675 11.9512 6.288 11.865L8.0505 9.75H10.5C11.3288 9.75 12 9.07875 12 8.25V1.5C12 0.67125 11.3288 0 10.5 0ZM6 1.5C6.82875 1.5 7.5 2.17125 7.5 3C7.5 3.82875 6.82875 4.5 6 4.5C5.17125 4.5 4.5 3.82875 4.5 3C4.5 2.17125 5.17125 1.5 6 1.5ZM8.12025 8.25H3.87975C3.37875 8.25 2.997 7.761 3.15825 7.28625C3.5595 6.102 4.68 5.25 6 5.25C7.32 5.25 8.4405 6.102 8.84175 7.28625C9.00225 7.761 8.62125 8.25 8.12025 8.25Z"
+                                        fill="currentColor"
+                                    />
+                                </svg>
+                            </div>
+                            <div class="sub-section-title">Real-Time Collaboration</div>
+                        </div>
+                        <div class="sub-section-text">
+                            Tackle projects as a team and give everyone visibility throughout the process.
+                        </div>
+                    </div>
+                </div>
+                <div class="sub-section-item last">
+                    <div class="sub-section-wrapper">
+                        <div class="sub-section-title-wrapper">
+                            <div class="sub-section-icon w-embed">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                    <g fill="currentColor">
+                                        <rect width="5" height="5" rx="1" fill="currentColor"></rect>
+                                        <rect x="7" width="5" height="5" rx="1"></rect>
+                                        <rect y="7" width="5" height="5" rx="1"></rect>
+                                        <rect x="7" y="7" width="5" height="5" rx="1" fill="currentColor"></rect>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="sub-section-title">Kanban, Grid, &amp; List View</div>
+                        </div>
+                        <div class="sub-section-text">Get the full view of your documents, any way you like.</div>
+                    </div>
+                </div>
+                <div id="w-node-_23e20f6b-fd6d-7a64-5218-f9f40b680a5d-8d23b4ea" class="div-block-106-copy"></div>
+            </div>
+            <div data-w-id="8a4de9e0-269b-7b59-7c9b-9b53b5b54b59" class="chaos-squiggle">
+                <div
+                    data-w-id="a8f598b8-715c-8274-2b44-1915b22f4875"
+                    data-is-ix2-target="1"
+                    data-animation-type="lottie"
+                    data-src="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/657012c05e3f3235f819101b_squiggle.json"
+                    data-loop="0"
+                    data-direction="1"
+                    data-autoplay="0"
+                    data-renderer="svg"
+                    data-default-duration="2.035368619133107"
+                    data-duration="0"
+                ></div>
+            </div>
+        </section>
+        <section class="ai-writing-contaner">
+            <div class="ai-writer-wrapper">
+                <div class="writing-alongside-wrapper">
+                    <div class="section-label">
+                        <div class="sub-section-icon w-embed">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                <g fill="currentColor">
+                                    <path
+                                        d="M10,1H2A2,2,0,0,0,0,3V9a2,2,0,0,0,2,2h8a2,2,0,0,0,2-2V3A2,2,0,0,0,10,1ZM7,9H2V3H7Z"
+                                        fill="currentColor"
+                                    ></path>
+                                </g>
+                            </svg>
+                        </div>
+                        <div>Writer-Designed AI</div>
+                    </div>
+                    <h2 class="section-heading">AI that&#x27;s on your side</h2>
+                    <p class="subheading">
+                        The only AI designed to collaborate with writers. No generic content, no steamrolling quality.
+                        Strut works alongside writers like you to create great work.
+                    </p>
+                </div>
+            </div>
+            <div data-w-id="6faaddc2-c9d5-bee1-23d4-2e9de46cf63e" class="div-block-105">
+                <div class="bg-gradient"></div>
+                <div class="div-block-104">
+                    <img
+                        src="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655a73d3056f1bc183dc316f_Editor.png"
+                        loading="lazy"
+                        srcset="
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655a73d3056f1bc183dc316f_Editor-p-500.png   500w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655a73d3056f1bc183dc316f_Editor-p-800.png   800w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655a73d3056f1bc183dc316f_Editor-p-1080.png 1080w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655a73d3056f1bc183dc316f_Editor-p-1600.png 1600w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655a73d3056f1bc183dc316f_Editor-p-2000.png 2000w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655a73d3056f1bc183dc316f_Editor-p-2600.png 2600w,
+                            https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655a73d3056f1bc183dc316f_Editor.png        2736w
+                        "
+                        alt=""
+                        sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, 88vw"
+                    />
+                </div>
+            </div>
+            <div class="sub-section tall">
+                <div class="div-block-90">
+                    <div class="sub-section-wrapper tall">
+                        <div class="div-block-120">
+                            <img
+                                src="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655712ee06849f153f2a39f7_Inline.png"
+                                loading="lazy"
+                                width="544"
+                                sizes="(max-width: 479px) 84vw, (max-width: 991px) 400px, 39vw"
+                                alt=""
+                                srcset="
+                                    https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655712ee06849f153f2a39f7_Inline-p-500.png   500w,
+                                    https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655712ee06849f153f2a39f7_Inline-p-800.png   800w,
+                                    https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655712ee06849f153f2a39f7_Inline-p-1080.png 1080w,
+                                    https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655712ee06849f153f2a39f7_Inline.png        1088w
+                                "
+                                class="image-18"
+                            />
+                        </div>
+                        <div class="sub-section-title-wrapper">
+                            <div class="sub-section-icon w-embed">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                    <title>i-edit</title>
+                                    <g fill="currentColor">
+                                        <path d="M11.5,11H.5a.5.5,0,0,0,0,1h11a.5.5,0,0,0,0-1Z"></path>
+                                        <path
+                                            d="M1.5,10a.48.48,0,0,0,.158-.026l3-1a.5.5,0,0,0,.2-.12l6-6a.5.5,0,0,0,0-.708l-2-2a.5.5,0,0,0-.708,0l-6,6a.5.5,0,0,0-.12.2l-1,3A.5.5,0,0,0,1.5,10Z"
+                                            fill="currentColor"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="sub-section-title">Inline Editing</div>
+                        </div>
+                        <div class="sub-section-text">
+                            Iterate and refine right in your documents. Shorten, re-write, check grammar, and more.
+                        </div>
+                    </div>
+                </div>
+                <div class="div-block-90 last">
+                    <div class="sub-section-wrapper tall">
+                        <div class="div-block-120">
+                            <img
+                                src="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655712fc06849f153f2a4b1c_Mentions.png"
+                                loading="lazy"
+                                sizes="(max-width: 479px) 87vw, (max-width: 767px) 89vw, (max-width: 991px) 640px, 41vw"
+                                srcset="
+                                    https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655712fc06849f153f2a4b1c_Mentions-p-500.png   500w,
+                                    https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655712fc06849f153f2a4b1c_Mentions-p-800.png   800w,
+                                    https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655712fc06849f153f2a4b1c_Mentions-p-1080.png 1080w,
+                                    https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/655712fc06849f153f2a4b1c_Mentions.png        1672w
+                                "
+                                alt=""
+                                class="image-19"
+                            />
+                        </div>
+                        <div class="sub-section-title-wrapper">
+                            <div class="sub-section-icon w-embed">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                    <g fill="currentColor">
+                                        <path
+                                            d="M10.815,2.207C9.091-.141,5.36-.711,2.831,.986,.336,2.66-.516,5.966,.849,8.678c1.045,2.075,3.186,3.317,5.422,3.316,.643,0,1.294-.102,1.929-.317,.393-.132,.603-.558,.471-.951-.134-.392-.555-.603-.951-.47-2.142,.723-4.52-.245-5.53-2.253-1.009-2.003-.359-4.539,1.479-5.772,2.034-1.365,4.813-.671,5.938,.863,.785,1.071,.932,2.705,.333,3.72-.362,.617-.846,.746-1.083,.681-.117-.032-.126-.084-.126-.155V3.693c0-.414-.336-.75-.75-.75-.301,0-.557,.18-.677,.437-.409-.246-.877-.398-1.381-.398-1.544,0-2.8,1.32-2.8,2.942s1.256,2.942,2.8,2.942c.605,0,1.163-.208,1.621-.552,.215,.297,.528,.523,.918,.63,.844,.229,2.026-.104,2.771-1.367,.894-1.518,.715-3.826-.417-5.369ZM5.922,7.365c-.717,0-1.3-.647-1.3-1.442s.583-1.442,1.3-1.442,1.3,.647,1.3,1.442-.583,1.442-1.3,1.442Z"
+                                            fill="currentColor"
+                                        ></path>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="sub-section-title">Mention Docs</div>
+                        </div>
+                        <div class="sub-section-text">
+                            Mention your docs in the chat to give powerful, clear instructions to the AI.
+                        </div>
+                    </div>
+                </div>
+                <div class="div-block-106"></div>
+            </div>
+        </section>
+        <div data-w-id="2ccb2003-cdbc-9f5c-1abe-c7dce5305dd5" class="navigation-scroll-container">
+            <div class="dark-sections">
+                <section class="prompts-container">
+                    <div class="prompts-wrapper">
+                        <div class="div-block-88-copy">
+                            <div class="section-label dark">
+                                <div class="sub-section-icon w-embed">
+                                    <svg
+                                        width="12"
+                                        height="12"
+                                        viewBox="0 0 12 12"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M9.375 6.75H8.25V5.25H9.375C10.8 5.25 12 4.05 12 2.625C12 1.2 10.8 0 9.375 0C7.95 0 6.75 1.2 6.75 2.625V3.75H5.25V2.625C5.25 1.2 4.05 0 2.625 0C1.2 0 0 1.2 0 2.625C0 4.05 1.2 5.25 2.625 5.25H3.75V6.75H2.625C1.2 6.75 0 7.95 0 9.375C0 10.8 1.2 12 2.625 12C4.05 12 5.25 10.8 5.25 9.375V8.25H6.75V9.375C6.75 10.8 7.95 12 9.375 12C10.8 12 12 10.8 12 9.375C12 7.95 10.8 6.75 9.375 6.75ZM8.25 2.625C8.25 2.025 8.775 1.5 9.375 1.5C9.975 1.5 10.5 2.025 10.5 2.625C10.5 3.225 9.975 3.75 9.375 3.75H8.25V2.625ZM1.5 2.625C1.5 2.025 2.025 1.5 2.625 1.5C3.225 1.5 3.75 2.025 3.75 2.625V3.75H2.625C2.025 3.75 1.5 3.225 1.5 2.625ZM3.75 9.375C3.75 9.975 3.225 10.5 2.625 10.5C2.025 10.5 1.5 9.975 1.5 9.375C1.5 8.775 2.025 8.25 2.625 8.25H3.75V9.375ZM5.25 5.25H6.75V6.75H5.25V5.25ZM9.375 10.5C8.775 10.5 8.25 9.975 8.25 9.375V8.25H9.375C9.975 8.25 10.5 8.775 10.5 9.375C10.5 9.975 9.975 10.5 9.375 10.5Z"
+                                            fill="currentColor"
+                                        />
+                                    </svg>
+                                </div>
+                                <div>CMD+K</div>
+                            </div>
+                            <h2 class="section-heading dark">Unlock powerful prompts</h2>
+                            <p class="subheading dark">
+                                Skip learning complicated prompts, Strut’s AI Commands let you instantly pull up
+                                powerful AI workflows designed to brainstorm ideas, generate outlines, review content,
+                                create drafts, re-purpose content, and more.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="div-block-92">
+                        <div data-w-id="95f7fda2-068c-1eda-bf12-2e029518b1da" class="div-block-94">
+                            <div class="animate-prompt-1">
+                                <div class="div-block-93">
+                                    <div class="div-block-102">
+                                        <div class="div-block-103"><div>Brainstorm Ideas</div></div>
+                                        <div class="div-block-103-copy"><div>Generate Outline</div></div>
+                                        <div class="div-block-103-copy"><div>Create Draft</div></div>
+                                        <div class="div-block-103-copy"><div>Review</div></div>
+                                        <div class="div-block-103-copy"><div>Re-purpose Content</div></div>
+                                    </div>
+                                    <div class="div-block-101"><div>What would you like to do?</div></div>
+                                </div>
+                            </div>
+                            <div class="animate-prompt-2">
+                                <div class="div-block-95-copy">
+                                    <div class="div-block-102-copy">
+                                        <div class="div-block-124">
+                                            <div class="html-embed-10 w-embed">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <g fill="currentColor">
+                                                        <path
+                                                            fill="currentColor"
+                                                            d="M8,0C4.7,0,2,2.7,2,6c0,2.2,1.2,4.1,3,5.2V15c0,0.6,0.4,1,1,1h4c0.6,0,1-0.4,1-1v-3.8c1.8-1.1,3-3,3-5.2 C14,2.7,11.3,0,8,0z M7,14v-1h2v1H7z M9.6,9.7C9.2,9.8,9,10.2,9,10.6V12H7v-1.4c0-0.4-0.2-0.8-0.6-0.9C4.9,9,4,7.6,4,6 c0-2.2,1.8-4,4-4s4,1.8,4,4C12,7.6,11.1,9,9.6,9.7z"
+                                                        ></path>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <div class="div-block-123">
+                                                <div class="text-block-17">Brainstorm Ideas</div>
+                                                <div class="text-block-16">What would you like to brainstorm?</div>
+                                            </div>
+                                        </div>
+                                        <div class="div-block-124-copy">
+                                            <div class="div-block-126">
+                                                <div class="html-embed-10 w-embed">
+                                                    <svg
+                                                        width="16"
+                                                        height="16"
+                                                        viewBox="0 0 16 16"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M14.0004 5.73425C13.9929 5.40573 13.7724 5.11921 13.4559 5.02921L2.95522 2.02903C2.69646 1.95402 2.41219 2.02678 2.21943 2.21954C2.02667 2.4123 1.95316 2.69357 2.02817 2.95608L5.02835 13.4567C5.11911 13.7725 5.40487 13.993 5.73414 14.0005C6.07616 14.0178 6.35818 13.7995 6.46169 13.4875L7.57851 10.1385L11.22 13.7807C11.3662 13.927 11.5582 14.0005 11.7503 14.0005C11.9423 14.0005 12.1343 13.927 12.2805 13.7807L13.7806 12.2806C14.0739 11.9874 14.0739 11.5134 13.7806 11.2201L10.1392 7.57786L13.4881 6.4618C13.7994 6.35754 14.0079 6.06277 14.0004 5.73425Z"
+                                                            fill="currentColor"
+                                                        />
+                                                    </svg>
+                                                </div>
+                                                <div class="div-block-123">
+                                                    <div class="text-block-17">Inspiration (Optional)</div>
+                                                    <div class="text-block-16">
+                                                        Pick documents to use as inspiration
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="div-block-125"><div class="div-block-127"></div></div>
+                                        </div>
+                                    </div>
+                                    <div class="div-block-101">
+                                        <div><span>Brainstorm Ideas</span></div>
+                                        <div class="div-block-128"><div class="text-block-18">Create</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="animate-prompt-3">
+                                <div class="div-block-95">
+                                    <div class="div-block-102-copy">
+                                        <div class="div-block-124-copy">
+                                            <div class="html-embed-10 w-embed">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <g fill="currentColor">
+                                                        <circle cx="8" cy="6.5" r="2.5"></circle>
+                                                        <path
+                                                            d="M8,10c-2.131,0-3.937,1.338-4.657,3.216,1.238,1.106,2.866,1.784,4.657,1.784s3.419-.678,4.657-1.784c-.72-1.877-2.527-3.216-4.657-3.216Z"
+                                                        ></path>
+                                                        <path
+                                                            d="M8,16C3.589,16,0,12.411,0,8S3.589,0,8,0s8,3.589,8,8-3.589,8-8,8Zm0-14c-3.309,0-6,2.691-6,6s2.691,6,6,6,6-2.691,6-6-2.691-6-6-6Z"
+                                                            fill="currentColor"
+                                                        ></path>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <div class="div-block-123">
+                                                <div class="text-block-17">Audience</div>
+                                                <div class="text-block-16">Describe your audience</div>
+                                            </div>
+                                        </div>
+                                        <div class="div-block-124-copy">
+                                            <div class="html-embed-10 w-embed">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <g fill="currentColor">
+                                                        <path
+                                                            fill="currentColor"
+                                                            d="M8,0C3.6,0,0,3.6,0,8s3.6,8,8,8s8-3.6,8-8S12.4,0,8,0z M8,14c-3.3,0-6-2.7-6-6s2.7-6,6-6s6,2.7,6,6 S11.3,14,8,14z"
+                                                        ></path>
+                                                        <path
+                                                            d="M8,4C5.8,4,4,5.8,4,8s1.8,4,4,4s4-1.8,4-4S10.2,4,8,4z M8,10c-1.1,0-2-0.9-2-2s0.9-2,2-2 s2,0.9,2,2S9.1,10,8,10z"
+                                                        ></path>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <div class="div-block-123">
+                                                <div class="text-block-17">Goal</div>
+                                                <div class="text-block-16">
+                                                    Describe your goal (eg. lead gen, brand awareness)
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="div-block-124-copy">
+                                            <div class="html-embed-10 w-embed">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <g fill="currentColor">
+                                                        <path
+                                                            d="M8.438,11.5H3.969l1.76,3.412a2,2,0,1,0,3.555-1.831Z"
+                                                        ></path>
+                                                        <path
+                                                            d="M14.691.038a.5.5,0,0,0-.545.108C14.118.175,11.254,3,8.5,3h-5a3.5,3.5,0,0,0,0,7h5c2.754,0,5.618,2.825,5.646,2.854A.5.5,0,0,0,15,12.5V.5A.5.5,0,0,0,14.691.038Z"
+                                                            fill="currentColor"
+                                                        ></path>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <div class="div-block-123">
+                                                <div class="text-block-17">Brand Voice</div>
+                                                <div class="text-block-16">Default</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="div-block-101">
+                                        <div>Re-purpose into Blog Post</div>
+                                        <div class="div-block-128"><div class="text-block-18">Create</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="animate-prompt-4">
+                                <div class="div-block-95-copy-copy">
+                                    <div class="div-block-102-copy">
+                                        <div class="div-block-124">
+                                            <div class="html-embed-10 w-embed">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="16"
+                                                    height="16"
+                                                    viewBox="0 0 16 16"
+                                                >
+                                                    <title>list</title>
+                                                    <g fill="currentColor">
+                                                        <rect
+                                                            x="5"
+                                                            y="9"
+                                                            fill="currentColor"
+                                                            width="11"
+                                                            height="2"
+                                                        ></rect>
+                                                        <rect y="9" fill="currentColor" width="3" height="2"></rect>
+                                                        <rect x="5" y="13" width="6" height="2"></rect>
+                                                        <rect y="13" width="3" height="2"></rect>
+                                                        <rect x="5" y="5" width="7" height="2"></rect>
+                                                        <rect y="5" width="3" height="2"></rect>
+                                                        <rect
+                                                            x="5"
+                                                            y="1"
+                                                            fill="currentColor"
+                                                            width="11"
+                                                            height="2"
+                                                        ></rect>
+                                                        <rect y="1" fill="currentColor" width="3" height="2"></rect>
+                                                    </g>
+                                                </svg>
+                                            </div>
+                                            <div class="div-block-123">
+                                                <div class="text-block-17">Outline</div>
+                                                <div class="text-block-16">What&#x27;s the outline for?</div>
+                                            </div>
+                                        </div>
+                                        <div class="div-block-124-copy">
+                                            <div class="div-block-126">
+                                                <div class="html-embed-10 w-embed">
+                                                    <svg
+                                                        width="16"
+                                                        height="16"
+                                                        viewBox="0 0 16 16"
+                                                        fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg"
+                                                    >
+                                                        <path
+                                                            d="M14.0004 5.73425C13.9929 5.40573 13.7724 5.11921 13.4559 5.02921L2.95522 2.02903C2.69646 1.95402 2.41219 2.02678 2.21943 2.21954C2.02667 2.4123 1.95316 2.69357 2.02817 2.95608L5.02835 13.4567C5.11911 13.7725 5.40487 13.993 5.73414 14.0005C6.07616 14.0178 6.35818 13.7995 6.46169 13.4875L7.57851 10.1385L11.22 13.7807C11.3662 13.927 11.5582 14.0005 11.7503 14.0005C11.9423 14.0005 12.1343 13.927 12.2805 13.7807L13.7806 12.2806C14.0739 11.9874 14.0739 11.5134 13.7806 11.2201L10.1392 7.57786L13.4881 6.4618C13.7994 6.35754 14.0079 6.06277 14.0004 5.73425Z"
+                                                            fill="currentColor"
+                                                        />
+                                                    </svg>
+                                                </div>
+                                                <div class="div-block-123">
+                                                    <div class="text-block-17">Inspiration (Optional)</div>
+                                                    <div class="text-block-16">
+                                                        Pick documents to use as inspiration
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="div-block-125"><div class="div-block-127"></div></div>
+                                        </div>
+                                    </div>
+                                    <div class="div-block-101">
+                                        <div>Generate Outline</div>
+                                        <div class="div-block-128"><div class="text-block-18">Create</div></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="animate-prompt-5">
+                                <div class="div-block-95-copy-copy-copy">
+                                    <div class="div-block-102">
+                                        <div class="div-block-103"><div>Blog Post</div></div>
+                                        <div class="div-block-103-copy"><div>Newsletter</div></div>
+                                        <div class="div-block-103-copy"><div>Linkedin Post</div></div>
+                                        <div class="div-block-103-copy"><div>Email</div></div>
+                                        <div class="div-block-103-copy"><div>Landing Page</div></div>
+                                    </div>
+                                    <div class="div-block-101"><div>Turn into...</div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section data-w-id="873f87cf-3afe-7942-04f0-673a54cd8e0e" class="brand-container">
+                    <div class="brand-voice-header">
+                        <div class="brand-wrapper">
+                            <div class="section-label dark center">
+                                <div class="sub-section-icon w-embed">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                        <g fill="currentColor">
+                                            <path
+                                                d="M5.522,9.09A6.1,6.1,0,0,0,4.5,9H2.74l1.038,2.269a1.251,1.251,0,0,0,1.657.618,1.25,1.25,0,0,0,.616-1.658Z"
+                                            ></path>
+                                            <path
+                                                d="M10.646.022a.5.5,0,0,0-.562.2A6.935,6.935,0,0,1,4.5,3h-2a2.5,2.5,0,0,0,0,5h2a6.935,6.935,0,0,1,5.584,2.778A.5.5,0,0,0,10.5,11a.527.527,0,0,0,.146-.022A.5.5,0,0,0,11,10.5V.5A.5.5,0,0,0,10.646.022Z"
+                                                fill="currentColor"
+                                            ></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div>Voice and Tone Sync</div>
+                            </div>
+                            <h2 class="section-heading dark">Always on-brand</h2>
+                            <p class="subheading dark">
+                                Instantly adopt any Brand Voice by uploading articles, web pages, or social media posts.
+                                Start writing and stay on-brand across projects, channels, and clients.
+                            </p>
+                        </div>
+                    </div>
+                    <div data-w-id="9b226566-2fb1-f3ab-ada1-d2e687a795ef" class="brand-voice-wrapper">
+                        <div data-w-id="4927e33a-59bc-f2c8-69e3-42a3ee565f1e" class="brand-voice-block first">
+                            <div class="div-block-115">
+                                <div class="sub-section-icon w-embed">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                        <title>e-add</title>
+                                        <g fill="currentColor">
+                                            <path
+                                                d="M11,5H7V1A1,1,0,0,0,5,1V5H1A1,1,0,0,0,1,7H5v4a1,1,0,0,0,2,0V7h4a1,1,0,0,0,0-2Z"
+                                                fill="currentColor"
+                                            ></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div>New Brand Voice</div>
+                            </div>
+                        </div>
+                        <div data-w-id="458d04c4-86f8-d80b-01c7-07e831caebcf" class="brand-voice-block">
+                            <div class="div-block-115">
+                                <div class="sub-section-icon w-embed">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                        <g fill="currentColor">
+                                            <path
+                                                d="M5.522,9.09A6.1,6.1,0,0,0,4.5,9H2.74l1.038,2.269a1.251,1.251,0,0,0,1.657.618,1.25,1.25,0,0,0,.616-1.658Z"
+                                            ></path>
+                                            <path
+                                                d="M10.646.022a.5.5,0,0,0-.562.2A6.935,6.935,0,0,1,4.5,3h-2a2.5,2.5,0,0,0,0,5h2a6.935,6.935,0,0,1,5.584,2.778A.5.5,0,0,0,10.5,11a.527.527,0,0,0,.146-.022A.5.5,0,0,0,11,10.5V.5A.5.5,0,0,0,10.646.022Z"
+                                                fill="currentColor"
+                                            ></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div>Press</div>
+                            </div>
+                        </div>
+                        <div data-w-id="ea5678cc-4c52-c09d-294a-bda6bae9c2e8" class="brand-voice-block">
+                            <div class="div-block-115">
+                                <div class="sub-section-icon w-embed">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                        <g fill="currentColor">
+                                            <path
+                                                d="M5.522,9.09A6.1,6.1,0,0,0,4.5,9H2.74l1.038,2.269a1.251,1.251,0,0,0,1.657.618,1.25,1.25,0,0,0,.616-1.658Z"
+                                            ></path>
+                                            <path
+                                                d="M10.646.022a.5.5,0,0,0-.562.2A6.935,6.935,0,0,1,4.5,3h-2a2.5,2.5,0,0,0,0,5h2a6.935,6.935,0,0,1,5.584,2.778A.5.5,0,0,0,10.5,11a.527.527,0,0,0,.146-.022A.5.5,0,0,0,11,10.5V.5A.5.5,0,0,0,10.646.022Z"
+                                                fill="currentColor"
+                                            ></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div>Marketing Site</div>
+                            </div>
+                        </div>
+                        <div data-w-id="cda5857c-78af-1293-5d07-5f87677facb4" class="brand-voice-block">
+                            <div class="div-block-115">
+                                <div class="sub-section-icon w-embed">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12">
+                                        <g fill="currentColor">
+                                            <path
+                                                d="M5.522,9.09A6.1,6.1,0,0,0,4.5,9H2.74l1.038,2.269a1.251,1.251,0,0,0,1.657.618,1.25,1.25,0,0,0,.616-1.658Z"
+                                            ></path>
+                                            <path
+                                                d="M10.646.022a.5.5,0,0,0-.562.2A6.935,6.935,0,0,1,4.5,3h-2a2.5,2.5,0,0,0,0,5h2a6.935,6.935,0,0,1,5.584,2.778A.5.5,0,0,0,10.5,11a.527.527,0,0,0,.146-.022A.5.5,0,0,0,11,10.5V.5A.5.5,0,0,0,10.646.022Z"
+                                                fill="currentColor"
+                                            ></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div>Social</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sub-section dark">
+                        <div id="w-node-b6f672fd-05c3-b85b-072b-8b26536774ef-8d23b4ea" class="sub-section-item dark">
+                            <div class="sub-section-wrapper">
+                                <div class="sub-section-title-wrapper">
+                                    <div class="sub-section-icon w-embed">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="12"
+                                            height="12"
+                                            viewBox="0 0 12 12"
+                                        >
+                                            <title>link</title>
+                                            <g fill="currentColor">
+                                                <path
+                                                    d="M9.5,7.5c-.256,0-.512-.098-.707-.293-.391-.391-.391-1.024,0-1.415l.672-.671c.713-.712,.713-1.873,0-2.585-.691-.691-1.895-.691-2.586,0l-.672,.672c-.391,.39-1.023,.39-1.414,0s-.391-1.024,0-1.415l.672-.671c1.445-1.445,3.969-1.446,5.414,0,1.492,1.492,1.492,3.921,0,5.414l-.672,.672c-.195,.195-.451,.292-.707,.292Z"
+                                                    fill="currentColor"
+                                                ></path>
+                                                <path
+                                                    d="M3.828,12c-1.022,0-1.984-.398-2.707-1.122-1.492-1.492-1.492-3.921,0-5.414l.672-.672c.391-.39,1.023-.39,1.414,0s.391,1.024,0,1.415l-.672,.671c-.713,.712-.713,1.873,0,2.585,.691,.691,1.895,.691,2.586,0l.672-.672c.391-.39,1.023-.39,1.414,0s.391,1.024,0,1.415l-.672,.671c-.723,.723-1.685,1.121-2.707,1.121Z"
+                                                    fill="currentColor"
+                                                ></path>
+                                                <path
+                                                    d="M4.5,8.25c-.192,0-.384-.073-.53-.22-.293-.293-.293-.768,0-1.061l3-3c.293-.293,.768-.293,1.061,0s.293,.768,0,1.061l-3,3c-.146,.146-.338,.22-.53,.22Z"
+                                                ></path>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="sub-section-title dark">Generate from website</div>
+                                </div>
+                                <div class="sub-section-text dark">
+                                    Write your own Brand Voice or generate one from a website link.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-section-item dark">
+                            <div class="sub-section-wrapper">
+                                <div class="sub-section-title-wrapper">
+                                    <div class="sub-section-icon w-embed">
+                                        <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            width="12"
+                                            height="12"
+                                            viewBox="0 0 12 12"
+                                        >
+                                            <title>copy-2</title>
+                                            <g fill="currentColor">
+                                                <path
+                                                    d="M9,1A1,1,0,0,0,8,0H1A1,1,0,0,0,0,1V9a1,1,0,0,0,1,1H4.5V4.5a1,1,0,0,1,1-1H9Z"
+                                                    fill="currentColor"
+                                                ></path>
+                                                <rect x="6" y="5" width="6" height="7" rx="0.5"></rect>
+                                            </g>
+                                        </svg>
+                                    </div>
+                                    <div class="sub-section-title dark">Multiple Brand Voices</div>
+                                </div>
+                                <div class="sub-section-text dark">
+                                    Stay on-brand across channels, clients, and projects.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="questions">
+                <div class="question-header"><h3 class="h3">Common Questions</h3></div>
+                <div class="question-block">
+                    <div class="question-item">
+                        <div class="text-block-14">Do you use my data to train your AI?</div>
+                    </div>
+                    <div class="question-item"><div>No, your data is never used to train AI.</div></div>
+                </div>
+                <div class="question-block">
+                    <div class="question-item"><div class="text-block-14">What AI model do you use?</div></div>
+                    <div class="question-item">
+                        <div>We always use the latest, which is currently OpenAI&#x27;s GPT4.</div>
+                    </div>
+                </div>
+            </div>
+            <section class="section-5">
+                <div class="footer-wrapper">
+                    <h2 class="heading-6">Get work moving with Strut</h2>
+                    <a id="btn-getstarted2" href="#" class="link w-inline-block"
+                        ><div>Get Started</div>
+                        <div class="w-embed">
+                            <svg
+                                width="12"
+                                height="12"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M6.834 1.12804C6.76212 1.06352 6.67309 1.0212 6.57767 1.00619C6.48226 0.991187 6.38453 1.00414 6.29632 1.04349C6.20811 1.08283 6.13318 1.14689 6.08059 1.22791C6.02801 1.30893 6.00002 1.40345 6 1.50004V5.00004H1C0.734784 5.00004 0.48043 5.1054 0.292893 5.29294C0.105357 5.48047 0 5.73483 0 6.00004C0 6.26526 0.105357 6.51961 0.292893 6.70715C0.48043 6.89468 0.734784 7.00004 1 7.00004H6V10.5C6.00002 10.5966 6.02801 10.6912 6.08059 10.7722C6.13318 10.8532 6.20811 10.9172 6.29632 10.9566C6.38453 10.9959 6.48226 11.0089 6.57767 10.9939C6.67309 10.9789 6.76212 10.9366 6.834 10.872L11.834 6.37204C11.8862 6.32515 11.928 6.26779 11.9566 6.2037C11.9851 6.13961 11.9999 6.07022 11.9999 6.00004C11.9999 5.92986 11.9851 5.86047 11.9566 5.79638C11.928 5.73229 11.8862 5.67493 11.834 5.62804L6.834 1.12804Z"
+                                    fill="currentColor"
+                                />
+                            </svg></div
+                    ></a>
+                </div>
+            </section>
+        </div>
+        <section class="section-8">
+            <div class="footer-navigation">
+                <div class="footer-left">
+                    <a href="/" aria-current="page" class="w-inline-block w--current"
+                        ><div>Strut — Organize and write</div></a
+                    ><a href="http://twitter.com/strut_ai" target="_blank" class="link-block w-inline-block"
+                        ><div class="html-embed-16 w-embed">
+                            <svg
+                                width="16"
+                                height="17"
+                                viewBox="0 0 16 17"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M9.52217 6.92379L15.4785 0H14.0671L8.89516 6.01183L4.76437 0H0L6.24656 9.09095L0 16.3516H1.41155L6.87321 10.0029L11.2356 16.3516H16L9.52183 6.92379H9.52217ZM7.58887 9.17104L6.95596 8.26579L1.92015 1.06259H4.0882L8.15216 6.8758L8.78507 7.78105L14.0677 15.3373H11.8997L7.58887 9.17139V9.17104Z"
+                                    fill="currentColor"
+                                />
+                            </svg></div
+                    ></a>
+                </div>
+                <div class="footer-right">
+                    <a href="/privacy-policy" class="w-inline-block"><div>Privacy Policy</div></a
+                    ><a href="/terms-of-service" class="w-inline-block"><div>Terms of Service</div></a>
+                </div>
+            </div>
+        </section>
+        <script
+            src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=64cbf5f3e6b7ac5a79b0d3fc"
+            type="text/javascript"
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+            crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://assets-global.website-files.com/64cbf5f3e6b7ac5a79b0d3fc/js/webflow.f50f5ac67.js"
+            type="text/javascript"
+        ></script>
+    </body>
+</html>
