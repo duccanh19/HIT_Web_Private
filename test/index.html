@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Virtual Try-On</title>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <h1>Virtual Try-On</h1>
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="userImage">User Image:</label>
+            <input type="file" id="userImage" name="userImage" accept="image/*" />
+            <br />
+            <label for="clothesImage">Clothes Image:</label>
+            <input type="file" id="clothesImage" name="clothesImage" accept="image/*" />
+            <br />
+            <button type="submit">Upload and Try On</button>
+        </form>
+        <div id="result">
+            <h2>Result</h2>
+            <img id="combinedImage" src="" alt="Combined Image" />
+        </div>
+        <script>
+            document.getElementById('uploadForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                let userImageFile = document.getElementById('userImage').files[0];
+                let clothesImageFile = document.getElementById('clothesImage').files[0];
+
+                let formData = new FormData();
+                formData.append('file', userImageFile);
+
+                fetch('/upload', {
+                    method: 'POST',
+                    body: formData,
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        let userImage = data.filename;
+
+                        formData = new FormData();
+                        formData.append('file', clothesImageFile);
+
+                        fetch('/upload', {
+                            method: 'POST',
+                            body: formData,
+                        })
+                            .then((response) => response.json())
+                            .then((data) => {
+                                let clothesImage = data.filename;
+
+                                fetch('/try-on', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                    },
+                                    body: JSON.stringify({
+                                        user_image: userImage,
+                                        clothes_image: clothesImage,
+                                    }),
+                                })
+                                    .then((response) => response.json())
+                                    .then((data) => {
+                                        document.getElementById('combinedImage').src = 'uploads/' + data.combined_image;
+                                        document.getElementById('result').style.display = 'block';
+                                    });
+                            });
+                    });
+            });
+        </script>
+    </body>
+</html>
