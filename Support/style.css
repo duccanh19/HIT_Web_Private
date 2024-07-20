@@ -1,0 +1,61 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap'); */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.box {
+    width: 400px;
+    height: 400px;
+    background-color: #fff8f6;
+    border-radius: 12px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    padding: 30px 70px;
+}
+
+.box h1 {
+    margin-bottom: 16px;
+}
+.button {
+    width: 100%;
+    padding: 4px 0;
+    border-radius: 8px;
+    border: none;
+    border: 1px solid black;
+    line-height: 22px;
+    cursor: pointer;
+}
+.google {
+    margin: 8px 0;
+}
+.infor {
+    margin: 8px 0;
+}
+
+.box input {
+    width: 100%;
+    border: none;
+    border: 1px solid black;
+    border-radius: 8px;
+    line-height: 30px;
+    padding-left: 16px;
+    outline: none;
+}
+.password {
+    margin: 8px 0 16px 0;
+}
+.button-login {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 0;
+}
